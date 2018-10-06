@@ -21,12 +21,12 @@
     // Modified findWiner.php to account for multiple winners
     $players = getPlayers();
     for($i = 0; $i < 4; $i++) {
-        echo ($players[$i]->getName());
+        echo ("<b>".$players[$i]->getName()."</b>");
         echo ': ';
         for($k = 0; $k < count($players[$i]->getHand()); $k++) {
             echo "<img src='". $players[$i]->getHand()[$k]->getImg() ."' />";
         }
-        echo ($players[$i]->getPoints());
+        echo ("<b>".$players[$i]->getPoints()."</B>");
         echo '<br>';
     }
     echo '<br>';
