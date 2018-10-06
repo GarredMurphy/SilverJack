@@ -1,4 +1,17 @@
 <?php
+    // Calculates the time
+    $start_time = microtime(TRUE);
+    session_start();
+    
+    function gamesPlayed() {
+        if (empty($_SESSION['counter']))
+            $_SESSION['counter'] = 1;
+        else
+            $_SESSION['counter']++;
+    }
+
+?>
+<?php
     
     function getWinner($players){
         require_once('makePlayerDecks.php');

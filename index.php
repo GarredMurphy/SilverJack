@@ -4,15 +4,6 @@
             <title></title>
     </head>
 <?php
-    // require_once('deck.php');
-
-    // $deck = new Deck();
-    // for (;$deck->getSize() > 0;)
-    // {
-    //     $newCard = $deck->drawCard();
-    //     echo "<img src='". $newCard->getImg() ."' />";
-    // }
-    
     
     include 'findWinner.php';
     include 'makePlayerDecks.php';
@@ -32,10 +23,29 @@
     echo '<br>';
     
     getWinner($players);
+    echo '<br>';
 
 ?>
 
 
+<?php gamesPlayed();?>
+    You have played <b><?php echo $_SESSION['counter']; ?></b> times <br>
+    
+    <?php
+    // Calculates the time
+    
+    $end_time = microtime(TRUE);
+    $time_taken =($end_time - $start_time)*1000;
+    $time_taken = round($time_taken,5);
+    echo 'Page generated in '.$time_taken.' seconds.';
+    
+    $_SESSION['timeTaken'] += $time_taken;
+    $_SESSION['avgTime'] = $_SESSION['timeTaken'] /$_SESSION['counter'];
+    echo "<br>";
+    ?>
+
+    Avg Load time is <?php echo round($_SESSION['avgTime'],5).' seconds.';
+?>
 
 </body>
 </html>
