@@ -3,11 +3,13 @@
         private $hand;
         private $points;
         private $name;
+        private $image;
         
         function __construct() {
             $this->hand = array();
             $this->points = 0;
             $this->name = "";
+            $this->image = array();
         }
         
         // get points function
@@ -36,6 +38,14 @@
         public function setName($name) {
             $this->name = $name;
         }
+        //get player image
+        public function getImg(){
+            return $this->image;
+        }
+        //set player image
+        public function setImg($image){
+            $this->image = $image;
+        }
     } 
 
 ?>
@@ -53,10 +63,12 @@
         //$playerNames = array("Spongebob", "Patrick", "Old man Jenkins", "Where's my diet Dr. Kelp dude");
         $playerNames = array("Spongebob", "Patrick", "Old man Jenkins", "Where's my diet Dr. Kelp dude");
         shuffle($playerNames);
+        $playerImage=array("0.jpg", "1.jpg", "2.jpg", "3.jpg");
         
         for($i = 0; $i < 4; $i++) {
             $player = new Player();
             $player->setName($playerNames[$i]);
+            $player->setImg($playerImage[$i]);
             while($player->getPoints() < 35) {
                 $newCard = $deck->drawCard();
                 $player->setHand($newCard);
