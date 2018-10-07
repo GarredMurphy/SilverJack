@@ -23,7 +23,7 @@
                         for($k = 0; $k < count($players[$i]->getHand()); $k++) {
                             echo "<img src='". $players[$i]->getHand()[$k]->getImg() ."' />";
                         }
-                        echo ("<b>".$players[$i]->getPoints()."</B>");
+                        echo ("<b>---->".$players[$i]->getPoints()."</B>");
                         echo '<br>';
                     }
                     echo '<br>';

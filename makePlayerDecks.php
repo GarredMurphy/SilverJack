@@ -62,7 +62,6 @@
         #the names can be changed to whatever you want, just went with the OG spongebob
         //$playerNames = array("Spongebob", "Patrick", "Old man Jenkins", "Where's my diet Dr. Kelp dude");
         $playerNames = array("Spongebob", "Patrick", "Old man Jenkins", "Where's my diet Dr. Kelp dude");
-        shuffle($playerNames);
         $playerImage=array("0.jpg", "1.jpg", "2.jpg", "3.jpg");
         
         for($i = 0; $i < 4; $i++) {
@@ -77,6 +76,7 @@
             array_push($allPlayers, $player);
             
         }
+        shuffle($allPlayers);
         return $allPlayers;
     }
     
